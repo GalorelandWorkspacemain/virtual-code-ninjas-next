@@ -1,0 +1,5 @@
+node_modules/
+.mjs
+.next
+.env
+.scores.json
