@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for virtual-code-ninjas-next-dark-shadow-3985 on 2025-12-09T19:19:11-08:00
+# fly.toml app configuration file generated for virtual-code-ninjas-next-winter-haze-9907 on 2025-12-09T19:40:53-08:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'virtual-code-ninjas-next-dark-shadow-3985'
+app = 'virtual-code-ninjas-next-winter-haze-9907'
 primary_region = 'lax'
 
 [build]
