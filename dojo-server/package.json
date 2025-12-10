@@ -1,0 +1,9 @@
+{
+  "name": "vcn-dojo",
+  "private": true,
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.7.0",
+    "cors": "^2.8.5"
+  }
+}

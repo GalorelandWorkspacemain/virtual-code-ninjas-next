@@ -9,16 +9,19 @@
     "test": "jest --config runner/jest.config.cjs"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.36.2",
     "@monaco-editor/react": "^4.7.0",
+    "@prisma/client": "^6.19.1",
     "monaco-editor": "0.41.0",
-    "next": "14.0.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "next": "^16.0.8",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1"
   },
   "devDependencies": {
     "@flydotio/dockerfile": "^0.7.10",
-    "@testing-library/react": "14.0.0",
+    "@testing-library/react": "^16.3.0",
     "babel-jest": "29.7.0",
-    "jest": "29.7.0"
+    "jest": "29.7.0",
+    "prisma": "^6.19.1"
   }
 }

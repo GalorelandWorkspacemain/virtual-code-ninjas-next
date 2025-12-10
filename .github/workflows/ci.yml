@@ -19,3 +19,14 @@ jobs:
         run: npm install
       - name: Run tests
         run: npm test
+        
+  prisma_migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '18' }
+      - run: npm install
+      - run: npx prisma migrate deploy --preview-feature
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
