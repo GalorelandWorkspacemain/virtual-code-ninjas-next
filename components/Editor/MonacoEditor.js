@@ -1,17 +1,34 @@
-'use client'
-import { useEffect, useRef } from 'react'
-import * as monaco from 'monaco-editor'
+"use client";
 
-export default function MonacoEditor(){
-  const ref = useRef(null)
-  useEffect(()=>{
-    if(!ref.current) return
-    const editor = monaco.editor.create(ref.current, {
-      value: '// Edit the starter file: runner/student-templates/madlib.js\nfunction makeStory(inputs = {}) {\n  const name = inputs.name || "Friend"\n  const color = inputs.color || "colorful"\n  const animal = inputs.animal || "creature"\n  return `Once upon a time, ${name} found a ${color} ${animal} in the garden.`\n}\n\nmodule.exports = { makeStory }',
-      language: 'javascript',
-      automaticLayout: true,
-    })
-    return ()=> editor.dispose()
-  }, [])
-  return <div ref={ref} style={{height: '100%', width:'100%'}} />
+import Editor from "@monaco-editor/react";
+import { useState } from "react";
+
+export default function MonacoEditor({ initialCode, filePath }) {
+  const [code, setCode] = useState(initialCode);
+
+  const saveFile = async () => {
+    await fetch("/api/save-file", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ filePath, code }),
+    });
+    alert("File saved!");
+  };
+
+  return (
+    <div className="flex flex-col gap-2">
+      <Editor
+        height="500px"
+        defaultLanguage="javascript"
+        value={code}
+        onChange={(value) => setCode(value)}
+      />
+      <button
+        onClick={saveFile}
+        className="px-4 py-2 bg-blue-600 text-white rounded"
+      >
+        Save Code
+      </button>
+    </div>
+  );
 }

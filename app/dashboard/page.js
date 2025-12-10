@@ -1,15 +1,36 @@
-import dynamic from 'next/dynamic'
+"use client";
 
-const MonacoEditor = dynamic(() => import('../../components/Editor/MonacoEditor'), { ssr: false })
+import { useState } from "react";
+import MonacoEditor from "@/components/Editor/MonacoEditor";
 
-export default function Dashboard(){
+export default function Dashboard() {
+  const [testOutput, setTestOutput] = useState("");
+
+  const runTests = async () => {
+    const res = await fetch("/api/run-tests");
+    const data = await res.json();
+    setTestOutput(data.result);
+  };
+
   return (
-    <main style={{padding: '2rem', fontFamily: 'Arial'}}>
-      <h1>Student Dashboard</h1>
-      <p>Edit the starter file below and run tests.</p>
-      <div style={{height: '500px', border: '1px solid #ddd'}}>
-        <MonacoEditor />
-      </div>
-    </main>
-  )
+    <div className="p-8">
+      <h1 className="text-3xl font-bold mb-4">Student Dashboard</h1>
+
+      <MonacoEditor
+        initialCode={`function greet(){ return "hello" }`}
+        filePath="madlib.js"
+      />
+
+      <button
+        onClick={runTests}
+        className="mt-4 px-4 py-2 bg-green-600 text-white rounded"
+      >
+        Run Tests
+      </button>
+
+      <pre className="mt-4 bg-black text-green-400 p-4 rounded">
+        {testOutput}
+      </pre>
+    </div>
+  );
 }
