@@ -6,6 +6,7 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.36.2",
     "ws": "^8.18.0"
   }
 }
