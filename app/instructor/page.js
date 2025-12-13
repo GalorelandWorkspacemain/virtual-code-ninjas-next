@@ -1,4 +1,6 @@
 // app/instructor/page.js
+export const dynamic = 'force-dynamic';
+
 import { requireUserWithRole } from "@/lib/auth";
 
 export default async function InstructorPage() {
