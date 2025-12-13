@@ -6,6 +6,7 @@ const isProtectedRoute = createRouteMatcher([
   '/dashboard(.*)',
   '/courses(.*)',
   '/api/progress(.*)',
+//   '/instructors(.*)',
   // Add other protected routes here
 ]);
 

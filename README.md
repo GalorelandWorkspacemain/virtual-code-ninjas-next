@@ -9,7 +9,21 @@ npm install
 npm test
 ```
 <!-- 
+echo $SHELL
+nano ~/.bash_profile
+
+brew unlink node
+brew install node@22
+brew link node@22 --force --overwrite
+node --version
+
 nvm install 22
 nvm use 22
 nvm alias default 22
+
+
+  git add .
+   git commit -m "Complete test runner integration"
+   git push
+   fly deploy
  -->
