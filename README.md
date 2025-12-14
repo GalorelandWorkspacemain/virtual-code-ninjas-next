@@ -23,7 +23,10 @@ nvm alias default 22
 
 
   git add .
-   git commit -m "Complete test runner integration"
+   git commit -m "Modified the look and Feel of the application"
    git push
-   fly deploy
+   Deploy to Fly.io:
+The GitHub Action should automatically deploy, or you can manually deploy from ws-server:
+cd ws-server
+fly deploy
  -->
