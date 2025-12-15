@@ -43,7 +43,7 @@ export default async function Home() {
                 href="/dashboard"
                 className="px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-blue-600 text-white font-semibold shadow-md hover:from-indigo-700 hover:to-blue-700 hover:shadow-lg transition-all"
               >
-                🚀 Go to Dashboard
+                🚀 Go to Studnt Portal
               </Link>
 
               <Link
